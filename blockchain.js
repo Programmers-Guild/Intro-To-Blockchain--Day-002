@@ -18,12 +18,12 @@ class Blockchain {
     // the hash of
 
     // check to see if first block is genesis block
-    if (JSON.stringify(this.chain[0]) == JSON.stringify(Block.genesis()))
+    if (JSON.stringify(chain[0]) == JSON.stringify(Block.genesis()))
       return false;
 
-    for (let i = 1; i < this.chain.length; i++) {
-      const prevBlock = this.chain[i - 1];
-      const block = this.chain[i];
+    for (let i = 1; i < chain.length; i++) {
+      const prevBlock = chain[i - 1];
+      const block = chain[i];
       if (block.prevHash != prevBlock.hash || block.hash != Block.hashBlock)
         return false;
     }
